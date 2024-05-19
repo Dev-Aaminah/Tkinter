@@ -11,4 +11,4 @@ theLabel = Label(root, text= "Hello")
 theLabel.pack()
 
 # keep showing window until user hits close icon
-root.mainloop()https://github.com/Dev-Aaminah/Tkinter
+root.mainloop()
