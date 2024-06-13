@@ -38,7 +38,7 @@ progress_int = ttk.IntVar()
 progress = ttk.Progressbar(window,
     variable=progress_int,  # Link the progress bar value to the progress_int IntVar
     )
-progress.pack(pady=20)  # Add the progress bar to the window with padding
+progress.pack(pady=10)  # Add the progress bar to the window with padding
 
 # Start the progress bar
 progress.start()
