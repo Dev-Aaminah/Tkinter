@@ -31,5 +31,21 @@ progress_bar = ttk.Progressbar(window,
 )
 progress_bar.pack()  # Add the progress bar to the window
 
+# Create an IntVar to hold the value of the progress bar
+progress_int = ttk.IntVar()
+
+# Create a horizontal progress bar widget
+progress = ttk.Progressbar(window,
+    variable=progress_int,  # Link the progress bar value to the progress_int IntVar
+    )
+progress.pack(pady=20)  # Add the progress bar to the window with padding
+
+# Start the progress bar
+progress.start()
+
+# Create a label to display the progress bar's value
+label = ttk.Label(window, textvariable=progress_int)  # Link the label's text to the progress_int IntVar
+label.pack()  # Add the label to the window
+
 # Start the Tkinter event loop
 window.mainloop()
