@@ -12,6 +12,7 @@ class App(tk.Tk):
         
         # widgets
         self.menu = Menu(self)
+        self.main = Main(self)
         
         # run
         self.mainloop()
@@ -57,5 +58,24 @@ class Menu(ttk.Frame):
         
         # entry layout
         entry.place(relx=0.5, rely= 0.95, relwidth=0.9, anchor='center')
+
+class Main(ttk.Frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.place(relx=0.3, y=0, relwidth=0.7, relheight=1)
+        Entry(self, 'Entry 1', 'Button 1', 'Green')
+        Entry(self, 'Entry 2', 'Button 2', 'Blue')
+
+
+class Entry(ttk.Frame):
+    def __init__ (self, parent, label_text, button_text, label_background):
+        super(). __init__(parent)
+        label = ttk.Label(self, text=label_text, background=label_background)
+        button = ttk.Button(self, text=button_text)
         
+        label.pack(expand=True, fill='both')
+        button.pack(expand=True, fill='both', pady=10)
+        
+        self.pack(side='left', expand=True, fill='both', padx=20, pady=20)
+
 App('Class based app',(600,600))
